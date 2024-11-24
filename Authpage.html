@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign-Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 350px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .switch {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .switch a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .switch a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="switch">
+            <p>Don't have an account? <a href="#" onclick="showSignUp()">Sign Up</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="signup-container" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" name="name" placeholder="Enter your name" required>
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input type="password" id="signup-confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="switch">
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        const loginContainer = document.getElementById('login-container');
+        const signUpContainer = document.getElementById('signup-container');
+
+        function showSignUp() {
+            loginContainer.style.display = 'none';
+            signUpContainer.style.display = 'block';
+        }
+
+        function showLogin() {
+            signUpContainer.style.display = 'none';
+            loginContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
